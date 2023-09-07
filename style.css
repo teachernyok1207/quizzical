@@ -1,0 +1,222 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    margin: 0;
+    font-family: Karla;
+    
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+    background: #F5F7FB;
+    user-select: none;
+}
+
+/* Background */
+.bgstyle-top,
+.bgstyle-bottom{
+    position: fixed;
+    z-index: 2;
+}
+
+.bgstyle-top{
+    top: 0;
+    right: 0;
+}
+
+.bgstyle-bottom {
+    bottom: 0;
+    left: 0;
+}
+
+#root{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Splash Page */
+.splash-page{
+    z-index: 3;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash--title{
+    color: #293264;
+    text-align: center;
+    font-size: 31.25px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.splash--desc{
+    color: #293264;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.splash--button{
+    width: 193px;
+    height: 52px;
+    border-radius: 15px;
+    
+    background: #4D5B9E;
+    color: #F5F7FB;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    cursor: pointer;
+}
+
+/* Loading */
+.loading--div{
+    z-index: 3;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #293264;
+    font-size: 20px;
+    font-weight: 700;
+    
+}
+
+/* Exam Page */
+.examPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.examPage--item{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    border: 1px dashed #4D5B9E;
+    padding: 15px;
+    margin-bottom: 20px;
+    z-index: 3;
+}
+
+.examPage--question{
+    width: 550px;
+    color: #293264;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.examPage--choices{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em 0.75em;
+}
+
+.submit-div {
+    width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.examPage--remarks{
+    color: #293264;
+    font-size: 12.8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 10px;
+}
+
+/* Multiple Choices */
+
+.examPage--submit{
+    width: 120px;
+    height: 35px;
+    background: #4D5B9E;
+    color: #F5F7FB;
+    
+    text-align: center;
+    font-size: 10.24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border-radius: 10px;
+    
+    padding: 2px;
+    box-sizing: unset;
+    cursor: pointer;
+    
+    margin-bottom: 10px;
+}
+
+.examPage--submit:disabled{
+    background: grey;
+    cursor: default;
+    pointer-events: none;
+}
+
+.examPage--option{
+    display: none;
+}
+
+.examPage--option + label{
+    border-radius: 7.942px;
+    color: #293264;
+    
+    text-align: center;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    
+    border: 1px solid #4D5B9E;
+    padding: 5px 10px 5px 10px;
+    
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label {
+    background: #4D5B9E;
+    color: white;
+} 
+
+input[type="radio"].showAnswer + label {
+    opacity: 0.5;
+    cursor: default;
+}
+
+input[type="radio"].classCorrect + label {
+    opacity: 0.5;
+    background: #F67373;
+    color: white;
+}
+
+input[type="radio"].classIncorrect + label {
+    opacity: 0.5;
+    background: #4D5B9E;
+    color: white;
+}
+
+input[type="radio"].selectedCorrectAnswer + label {
+    opacity: 1.0;
+    background: #029713;
+    color: white;
+}
